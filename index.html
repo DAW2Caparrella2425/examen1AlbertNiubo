@@ -22,21 +22,28 @@
 
     <input type="textbox" id="lletra" name="lletra">
    
-    <input id="button" type="submit" name="button" onclick="myFunction();" value="enter"/>
+    <input id="button" type="submit" name="button" onclick="quantitat();" value="enter"/>
    
+    <ul class="lletra" id="paraules"></ul>
+
     <script>    
-        parauuser=document.getElementById("paraula").value;
-       textbox=document.getElementById("lletra").value;
-        quantitatlletres=0;
-        for(i=0; i<parauuser.length; i++){
-            lletra = parauuser.charAt(i);
-            if(textbox.indexOf(lletra)>=0){
-                quantitatlletres+1;
+        function quantitat() {
+            let parauuser = document.getElementById("paraula").value;
+            let textbox = document.getElementById("lletra").value;
+            let quantitatlletres = 0;
+            
+            
+            for (let i = 0; i < parauuser.length; i++) {
+                let lletra = parauuser.charAt(i);
+                if (textbox.indexOf(lletra) >= 0) {
+                    quantitatlletres++;
+                }
             }
+            let paraules = document.getElementById("paraules");
+            let noutd = document.createElement("li");
+            noutd.innerHTML = `la lletra:${textbox} ha aparegut: ${quantitatlletres} vagades i esta en la posicio: `;
+            paraules.appendChild(noutd);
         }
-        function myFunction(){
-        alert(quantitatlletres);
-    }; 
-    </script>
+     </script>
 </body> 
 </html> 
