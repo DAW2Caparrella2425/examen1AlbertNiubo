@@ -28,24 +28,27 @@
    
     <ul class="lletra" id="paraules"></ul>
 
-    <script>    
-        function quantitat() {
-            let parauuser = document.getElementById("paraula").value;
-            let textbox = document.getElementById("lletra").value;
-            let quantitatlletres = 0;
-            
-            
-            for (let i = 0; i < parauuser.length; i++) {
-                let lletra = parauuser.charAt(i);
-                if (textbox.indexOf(lletra) >= 0) {
-                    quantitatlletres++;
-                }
+   
+<script>    
+    function quantitat() {
+        let parauuser = document.getElementById("paraula").value;
+        let textbox = document.getElementById("lletra").value;
+        let quantitatlletres = 0;
+        let positions = []; 
+        
+        for (let i = 0; i < parauuser.length; i++) {
+            let lletra = parauuser.charAt(i);
+            if (textbox.indexOf(lletra) >= 0) {
+                quantitatlletres++;
+                positions.push(i);
             }
-            let paraules = document.getElementById("paraules");
-            let noutd = document.createElement("li");
-            noutd.innerHTML = `la lletra:${textbox}, ha aparegut: ${quantitatlletres}`;
-            paraules.appendChild(noutd);
         }
-     </script>
+        
+        let paraules = document.getElementById("paraules");
+        let noutd = document.createElement("li");
+        paraules.appendChild(noutd);
+        noutd.innerHTML = `La paraula "${textbox}" ha aparegut ${quantitatlletres} vegades a la posicio: ${positions.join(", ")}`;
+    }
+</script>
 </body> 
 </html> 
