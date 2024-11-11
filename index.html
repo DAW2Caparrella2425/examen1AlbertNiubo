@@ -9,7 +9,6 @@
     <meta name="description" content="A brief page description">
     <meta name="keywords" content="html,cheatsheet">
     <meta property="fb:admins" content="YourFacebookUsername">
-    <link rel="icon" href="img/logopagina.jpg" type="image/x-icon">
     <link rel="stylesheet" href="normalised.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
@@ -18,29 +17,26 @@
 
 </head> 
 <body> 
-    <div>
-    <input type="text" id="paraulauser">
-</div>
-    <div>
-    <input type="textbox" id="textbox">
-</div>
-    <div>
-    <button>a</button>
-    </div>
-    <script>
+
+    <input type="text" id="paraula" name="paraulauser"/>
+
+    <input type="textbox" id="lletra" name="lletra">
+   
+    <input id="button" type="submit" name="button" onclick="myFunction();" value="enter"/>
+   
+    <script>    
+        parauuser=document.getElementById("paraula").value;
+       textbox=document.getElementById("lletra").value;
         quantitatlletres=0;
-        var parauuser=document.getElementById("paraulauser");
-        var textbox=document.getElementById("textbox");
         for(i=0; i<parauuser.length; i++){
             lletra = parauuser.charAt(i);
             if(textbox.indexOf(lletra)>=0){
-                quantitatlletres++;
+                quantitatlletres+1;
             }
         }
-        if(document.getElementById('button').clicked == true)
-{
-   alert(quantitatlletres);
-}
+        function myFunction(){
+        alert(quantitatlletres);
+    }; 
     </script>
 </body> 
 </html> 
