@@ -18,6 +18,29 @@
 
 </head> 
 <body> 
+    <div>
     <input type="text" id="paraulauser">
+</div>
+    <div>
+    <input type="textbox" id="textbox">
+</div>
+    <div>
+    <button>a</button>
+    </div>
+    <script>
+        quantitatlletres=0;
+        var parauuser=document.getElementById("paraulauser");
+        var textbox=document.getElementById("textbox");
+        for(i=0; i<parauuser.length; i++){
+            lletra = parauuser.charAt(i);
+            if(textbox.indexOf(lletra)>=0){
+                quantitatlletres++;
+            }
+        }
+        if(document.getElementById('button').clicked == true)
+{
+   alert(quantitatlletres);
+}
+    </script>
 </body> 
 </html> 
